@@ -15,9 +15,19 @@ const handlingForms = {
 
     data() {
         return {
-            members: window.members
+            members: window.members,
+            newMember: {}
         }
     },
+    methods: {
+        addMember() {
+            if (this.newMember.fname && this.newMember.lname && this.newMember.instrument) {
+                this.members.push(this.newMember)
+                this.newMember = {}
+            }
+        }
+
+    }
 
 };
 
